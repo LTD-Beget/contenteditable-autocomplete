@@ -71,5 +71,6 @@
     "server": {
       "cmd": "webpack-dev-server --context demo --config demo/webpack.config.js --content-base demo -d"
     }
-  }
+  },
+  "version": "1.0.2"
 }

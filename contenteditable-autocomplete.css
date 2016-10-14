@@ -5,10 +5,13 @@
 [data-autocomplete] .suggestions {
   position: absolute;
   top: 100%;
-  left: 0;
-  min-width: 100%;
+  left: -1px;
+  min-width: 515px;
   border: 1px solid #ccc;
   border-top: 0;
+  max-height: 200px;
+  overflow-y: scroll;
+  overflow-x: hidden;
 
   background: #fff;
   z-index: 2;
@@ -17,6 +20,7 @@
   font-family: Helvetica, Arial;
   font-weight: normal;
   line-height: 18px;
+    margin-top: 2px;
 }
 
 [data-autocomplete] .suggestions > div {
@@ -26,7 +30,7 @@
 
 [data-autocomplete] .suggestions > div.highlight,
 [data-autocomplete] .suggestions > div:hover {
-  background: #0A5CB4;
+  background: #EFF3F6;
   color: #fff;
 }
 
