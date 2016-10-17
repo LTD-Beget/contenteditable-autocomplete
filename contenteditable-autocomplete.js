@@ -130,21 +130,21 @@
                     if (isMultiple) addTrailingComma()
                 }
 
-        function handleClick() {
-            currentValue = $input.text()
+                function handleClick() {
+                    currentValue = $input.text()
 
-            if (currentValue.length == 0) {
-                event.stopPropagation()
-                $('.suggestions').hide()
-                $input.trigger('autocomplete:request', [currentValue, handleNewSuggestions])
-            }
+                    if (currentValue.length == 0) {
+                        event.stopPropagation()
+                        $('.suggestions').hide()
+                        $input.trigger('autocomplete:request', [currentValue, handleNewSuggestions])
+                    }
 
-        }
+                }
 
-        //
-        function handleInput(/* event */) {
-            var newValue = $input.text()
-            var query
+                //
+                function handleInput(/* event */) {
+                    var newValue = $input.text()
+                    var query
 
                     if (!newValue.trim()) {
                         $suggestions.hide()
@@ -203,21 +203,21 @@
                     }
                 }
 
-        function handleBlur(event) {
-            /*$suggestions.hide()
+                function handleBlur(event) {
+                    /*$suggestions.hide()
 
-             if (isMultiple) removeTrailingComma()*/
-        }
+                     if (isMultiple) removeTrailingComma()*/
+                }
 
-        function handleSuggestionClick(event) {
-            if (event.target.className != 'external-directive-documentation-link') {
-                event.preventDefault()
-                event.stopPropagation()
+                function handleSuggestionClick(event) {
+                    if (event.target.className != 'external-directive-documentation-link') {
+                        event.preventDefault()
+                        event.stopPropagation()
 
-                selectSuggestionByElement($(event.currentTarget))
-                $suggestions.hide()
-            }
-        }
+                        selectSuggestionByElement($(event.currentTarget))
+                        $suggestions.hide()
+                    }
+                }
 
                 // Internal Methods
                 // ----------------
@@ -241,29 +241,29 @@
                         return
                     }
 
-            currentSuggestions.forEach(function (suggestion, index) {
-                var help = suggestion.value.split(';')[1]
-                var link = suggestion.value.split(';')[2]
-                suggestion.label = suggestion.value = suggestion.value.split(';')[0]
-                suggestion.value = '<span class="directive-name">' + suggestion.value + '</span> =&nbsp;'
-                var label = suggestion.label
-                var highlight = (index === 0) ? ' class="highlight"' : ''
+                    currentSuggestions.forEach(function (suggestion, index) {
+                        var help = suggestion.value.split(';')[1]
+                        var link = suggestion.value.split(';')[2]
+                        suggestion.label = suggestion.value = suggestion.value.split(';')[0]
+                        suggestion.value = '<span class="directive-name">' + suggestion.value + '</span> =&nbsp;'
+                        var label = suggestion.label
+                        var highlight = (index === 0) ? ' class="highlight"' : ''
 
                         if (!label) return
 
                         label = htmlEscape(label)
 
-                // select first result per default
-                html += '<div' + highlight + '><span class="select-directive-item">'
-                html += label.replace(regex, '<strong>$1</strong>')
-                html += '<div class="directive-help">'
-                if (link && link != null)
-                    html += '<a href="http://php.net/manual/' + t('ru') + '/' + link + '" target="_blank" class="external-directive-documentation-link"><i class="fa fa-external-link" aria-hidden="true"></i>&nbsp;' + t('Описание директивы') + '</a> '
-                html += t('Тип значения') + ': ' + help + '</div></span></div>'
-            })
-            $suggestions.html(html).show()
-            $suggestions.scrollTop(0)
-        }
+                        // select first result per default
+                        html += '<div' + highlight + '><span class="select-directive-item">'
+                        html += label.replace(regex, '<strong>$1</strong>')
+                        html += '<div class="directive-help">'
+                        if (link && link != null)
+                            html += '<a href="http://php.net/manual/' + t('ru') + '/' + link + '" target="_blank" class="external-directive-documentation-link"><i class="fa fa-external-link" aria-hidden="true"></i>&nbsp;' + t('Описание директивы') + '</a> '
+                        html += t('Тип значения') + ': ' + help + '</div></span></div>'
+                    })
+                    $suggestions.html(html).show()
+                    $suggestions.scrollTop(0)
+                }
 
                 //
                 function newSuggestionsOnly(suggestion) {
@@ -291,10 +291,10 @@
 
                     if (!$next.length) return
 
-            $highlighted.removeClass('highlight')
-            $next.addClass('highlight')
-            $suggestions.scrollTop($suggestions.scrollTop() + 45)
-        }
+                    $highlighted.removeClass('highlight')
+                    $next.addClass('highlight')
+                    $suggestions.scrollTop($suggestions.scrollTop() + 45)
+                }
 
                 //
                 function highlightPreviousSuggestion() {
@@ -303,11 +303,11 @@
 
                     if (!$prev.length) return
 
-            $highlighted.removeClass('highlight')
-            $prev.addClass('highlight')
+                    $highlighted.removeClass('highlight')
+                    $prev.addClass('highlight')
 
-            $suggestions.scrollTop($suggestions.scrollTop() - 45)
-        }
+                    $suggestions.scrollTop($suggestions.scrollTop() - 45)
+                }
 
                 //
                 function selectHighlightedSuggestion() {
@@ -329,17 +329,17 @@
                     $input.trigger('autocomplete:select', [selected])
                 }
 
-        function setCursorAt() {
-            if ($input[0].childNodes[1]) {
-                var range = document.createRange()
-                var sel = window.getSelection()
-                var textNode = $input[0].childNodes[1]
-                range.setStart(textNode, textNode.length)
-                range.collapse(true)
-                sel.removeAllRanges()
-                sel.addRange(range)
-            }
-        }
+                function setCursorAt() {
+                    if ($input[0].childNodes[1]) {
+                        var range = document.createRange()
+                        var sel = window.getSelection()
+                        var textNode = $input[0].childNodes[1]
+                        range.setStart(textNode, textNode.length)
+                        range.collapse(true)
+                        sel.removeAllRanges()
+                        sel.addRange(range)
+                    }
+                }
 
                 //
                 // to find out what the current word is, we get the current
