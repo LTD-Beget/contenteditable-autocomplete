@@ -106,6 +106,7 @@
                     $input.on('input', handleInput)
                     $input.on('keydown', handleKeydown)
                     $input.on('blur', handleBlur)
+                    $input.on('click', handleClick)
                     $suggestions.on('mousedown touchstart', '> div', handleSuggestionClick)
 
                     // wrap input into container. Use setTimeout to prevent
