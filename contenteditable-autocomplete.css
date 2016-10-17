@@ -9,9 +9,6 @@
   min-width: 515px;
   border: 1px solid #ccc;
   border-top: 0;
-  max-height: 200px;
-  overflow-y: scroll;
-  overflow-x: hidden;
 
   background: #fff;
   z-index: 2;
@@ -20,7 +17,6 @@
   font-family: Helvetica, Arial;
   font-weight: normal;
   line-height: 18px;
-    margin-top: 2px;
 }
 
 [data-autocomplete] .suggestions > div {
