@@ -192,9 +192,6 @@
 
                             $suggestions.hide()
 
-                            // do not cancel event on TAB
-                            if (event.keyCode === KEY.TAB) return
-
                             event.preventDefault()
                             return
 
