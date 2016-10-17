@@ -322,8 +322,8 @@
                     if (isMultiple) {
                         replaceCurrentWordWith(value)
                     } else {
-                        $input.text(value).focus()
-                        setCursorAt(value.length)
+                        $input.html(value).focus()
+                        setCursorAt()
                     }
 
                     $input.trigger('autocomplete:select', [selected])
