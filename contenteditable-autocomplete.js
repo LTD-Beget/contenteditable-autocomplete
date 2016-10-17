@@ -133,10 +133,10 @@
 
                 function handleClick() {
                     currentValue = $input.text()
+                    $('.suggestions').hide()
 
                     if (currentValue.length == 0) {
                         event.stopPropagation()
-                        $('.suggestions').hide()
                         $input.trigger('autocomplete:request', [currentValue, handleNewSuggestions])
                     }
 
