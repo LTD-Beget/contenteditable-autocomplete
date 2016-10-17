@@ -21,7 +21,7 @@
     "test:watch": "frontend-test-background mocha test/*.js --watch --reporter min",
     "presemantic-release": "npm run build",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post",
-    "postinstall": "node ./bin/build.js"
+    "postinstall": "bin/build.js"
   },
   "repository": {
     "type": "git",
