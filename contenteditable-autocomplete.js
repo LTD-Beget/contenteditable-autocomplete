@@ -255,7 +255,7 @@
                         html += '<div' + highlight + '><span class="select-directive-item">'
                         html += label.replace(regex, '<strong>$1</strong>')
                         html += '<div class="directive-help">'
-                        if (link && link != null)
+                        if (link && link != 'null')
                             html += '<a href="http://php.net/manual/' + t('ru') + '/' + link + '" target="_blank" class="external-directive-documentation-link"><i class="fa fa-external-link" aria-hidden="true"></i>&nbsp;' + t('Описание директивы') + '</a> '
                         html += t('Тип значения') + ': ' + help + '</div></span></div>'
                     })
