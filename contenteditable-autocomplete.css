@@ -4,9 +4,8 @@
 
 [data-autocomplete] .suggestions {
   position: absolute;
-  top: 100%;
   left: -1px;
-  min-width: 515px;
+  min-width: 100%;
   border: 1px solid #ccc;
   border-top: 0;
 

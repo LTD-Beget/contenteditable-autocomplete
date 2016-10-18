@@ -260,6 +260,11 @@
                         html += t('Тип значения') + ': ' + help + '</div></span></div>'
                     })
                     $suggestions.html(html).show()
+                    if($('.modal-footer').offset().top - $input.offset().top < 205) {
+                        $suggestions.css('bottom', '100%').css('margin-bottom', '2px').css('top', '').css('margin-top', '')
+                    } else {
+                        $suggestions.css('bottom', '').css('margin-bottom', '').css('top', '100%')
+                    }
                     $suggestions.scrollTop(0)
                 }
 
