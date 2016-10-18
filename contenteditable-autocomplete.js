@@ -259,6 +259,7 @@
                             html += '<a href="http://php.net/manual/' + t('ru') + '/' + link + '" target="_blank" class="external-directive-documentation-link"><i class="fa fa-external-link" aria-hidden="true"></i>&nbsp;' + t('Описание директивы') + '</a> '
                         html += t('Тип значения') + ': ' + help + '</div></span></div>'
                     })
+                    $('.suggestions').hide()
                     $suggestions.html(html).show()
                     if($('.modal-footer').offset().top - $input.offset().top < 205) {
                         $suggestions.css('bottom', '100%').css('margin-bottom', '2px').css('top', '').css('margin-top', '')
