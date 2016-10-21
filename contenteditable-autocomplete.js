@@ -118,7 +118,6 @@
                         var cursorPosition = getCaretCharacterOffsetWithin($input[0])
                         $input.after($container).appendTo($container)
                         $input.focus()
-                        setCursorAt(cursorPosition)
                     })
                 }
 
@@ -262,7 +261,7 @@
                     $('.suggestions').hide()
                     $suggestions.html(html).show()
                     if($('.modal-footer').offset().top - $input.offset().top < 205) {
-                        $suggestions.css('bottom', '100%').css('margin-bottom', '2px').css('top', '').css('margin-top', '')
+                        $suggestions.css('bottom', '100%').css('margin-bottom', '1px').css('top', '').css('margin-top', '')
                     } else {
                         $suggestions.css('bottom', '').css('margin-bottom', '').css('top', '100%')
                     }
@@ -393,7 +392,6 @@
                             beforeQuery = currentValue.substring(0, charCount).trim()
                             afterQuery = currentValue.substring(cursorAt)
                             $input.html(htmlEscape(beforeQuery + ' ' + newWord) + ',&nbsp' + htmlEscape(afterQuery))
-                            setCursorAt((beforeQuery + ' ' + newWord + ', ').length)
                             return
                         }
                         charCount += word.length + 1 // add 1 for the ,
